@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Menu</title>
-	<link rel="stylesheet" href="menu.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Menu</title>
+  <link rel="stylesheet" type="text/css" href="menu.css">
 </head>
 <body>
-	<div id="menu">
-		<div class="hamburger">
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-		</div>
-		<div class="menu-inner">
-			
+  <div id="container">
+        <div id="nav-menu">
+            <div class="bg"></div>
+				<div class="button" tabindex="0">
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</div>
+			<div id="content-menu" tabindex="0">
 			<ul>
-				<li>Menu Item</li>
-				<li>Menu Item</li>
-				<li>Menu Item</li>
-				<li>Menu Item</li>
-				<li>Menu Item</li>
-				<li>Menu Item</li>
-			</ul>
+				<i class="fa-solid fa-house"></i><li><a href="#">Tela inicial</a></li>
+				<li><a href="#">Mapa</a></li>
+				<li><a href="#">Estatísticas</a></li>
+				<li><a href="#">Abastecimentos</a></li>
+				<li><a href="#">Manutenção</a></li>
+				<li><a href="#">Simulador</a></li>
+			</div>
 		</div>
-  
-		<svg version="1.1" id="blob"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
-		</svg>
 	</div>
-
 </body>
 </html>

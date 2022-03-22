@@ -1,15 +1,15 @@
 /*Variáveis*/
 
 :root {
-    --main-color: #26394E;
-    --link-color: #666666;
-    --text1: #999999;
-    --highligth-text: #333333;
-    --input-text: #555555;
-    --white-color: #FFFFFF;
-    --point-list: #CCCCCC;
-    --line-input: #D9D9D9;
-  }
+  --main-color: #FED057;
+  --link-color: #eee;
+  --text1: #eee;
+  --highligth-text: #eee;
+  --input-text: #eee;
+  --white-color: #26394E;
+  --point-list: #eee;
+  --line-input: #eee;
+}
   
   /*Fontes*/
   
