@@ -108,7 +108,7 @@
     background: #FED057;
     max-width: 300px;
     position: absolute;
-    top: -8px;
+    top: -7px;
     left: 0;
     height: calc(100% - 40px);
     pointer-events: auto;
