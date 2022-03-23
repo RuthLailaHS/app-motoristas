@@ -29,9 +29,12 @@
   /* Menu */
   #nav-menu {
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     pointer-events: none;
+    z-index: 2000;
   }
   
   #nav-menu .bg {
@@ -105,17 +108,27 @@
     background: #FED057;
     max-width: 300px;
     position: absolute;
-    top: 0;
+    top: -8px;
     left: 0;
-    height: calc(100% - 70px);
+    height: calc(100% - 40px);
     pointer-events: auto;
     -webkit-tap-highlight-color: #fff;
     transform: translateX(-100%);
     transition: transform .3s;
     will-change: transform;
     contain: paint;
-    opacity: 0.8;
+    /* opacity: 0.8; */
   }
+  
   #nav-menu:focus-within #content-menu {
     transform: none;
+  }
+
+  .logotipo{
+    text-indent: 80px;
+    padding-top: 12px;
+  }
+
+  .bg-navega{
+    background-color: #2b4058 !important;
   }
