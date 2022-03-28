@@ -132,3 +132,7 @@
   .bg-navega{
     background-color: #2b4058 !important;
   }
+
+  #chart_div div div{
+    margin: 0 auto;
+  }
