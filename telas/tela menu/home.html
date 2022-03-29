@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    
 
-    <title>Estatísticas</title>
+    <title>Home</title>
   </head>
   <body class="mt-5 pt-5">
 
@@ -37,8 +37,8 @@
 				</div>
 			<div id="content-menu" tabindex="0">
 			<ul>
-                <li><a href="#"><i class="fa-solid fa-house"></i> Tela inicial</a></li>
-				<li><a href="#"><i class="fa-solid fa-map-location-dot"></i> Localizar serviço</a></li>
+                <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+				<li><a href="#"><i class="fa-solid fa-map-location-dot"></i> Localizar serviços</a></li>
 				<li><a href="#"><i class="fas fa-chart-line"></i> Estatísticas</a></li>
 				<li><a href="#"><i class="fa-solid fa-gas-pump"></i> Abastecimento</a></li>
 				<li><a href="#"><i class="fa-solid fa-wrench"></i> Manutenção</a></li>
@@ -52,6 +52,7 @@
 			<div class="col-md-8 offset-md-2">
 
 				<!-- Conteúdo -->
+				<h2 class="text-center text-white mb-4"><i class="fa-solid fa-house"></i> Home</h2>
 				<div id="chart_div" class="mb-3"></div>
 				<script type="text/javascript">
 					//LARGURA DA JANELA
@@ -74,11 +75,10 @@
 					  data.addColumn('string', 'Topping');
 					  data.addColumn('number', 'Slices');
 					  data.addRows([
-						['Mushrooms', 3],
-						['Onions', 1],
-						['Olives', 1],
-						['Zucchini', 1],
-						['Pepperoni', 2]
+					  	['Combustível', 3],
+						['Manutenção', 1],
+						['Lava-rápido', 1],
+						['Km rodados', 2],
 					  ]);
 			  
 					  // Set chart options
