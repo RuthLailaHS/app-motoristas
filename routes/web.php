@@ -14,8 +14,51 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
+    return view('home');
+    })->name('home');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/cadastrar-veiculo', function () {
+    return view('cadastrar-veiculo');
+    })->name('cadastrar-veiculo');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/localizar-servicos', function () {
+    return view('localizar-servicos');
+    })->name('localizar-servicos');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/estatisticas', function () {
+    return view('estatisticas');
+    })->name('estatisticas');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/abastecimento', function () {
+    return view('abastecimento');
+    })->name('abastecimento');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/manutencao', function () {
+    return view('manutencao');
+    })->name('manutencao');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/ajudai', function () {
+    return view('ajudai');
+    })->name('ajudai');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/simulador', function () {
+    return view('simulador');
+    })->name('simulador');
+
+
+
+
 
 Route::middleware([
     'auth:sanctum',
