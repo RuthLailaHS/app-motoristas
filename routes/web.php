@@ -58,8 +58,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/simulador', function () {
 
 
 
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

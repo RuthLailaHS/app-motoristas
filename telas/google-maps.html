@@ -1,0 +1,200 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div id="map" style="height: 100%;"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=SUA CHAVE&callback=initMap&v=weekly"
+      async
+    ></script>
+    <script>      
+      let map, infoWindow;
+
+      function initMap() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              };
+
+              infoWindow.setPosition(pos);
+              infoWindow.setContent("Localização aqui.");
+              infoWindow.open(map);
+              map.setCenter(pos);
+            },
+            () => {
+              handleLocationError(true, infoWindow, map.getCenter());
+            }
+          );
+          map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 0, lng: 0 },
+            zoom: 16,
+          });
+          infoWindow = new google.maps.InfoWindow();
+        } else {
+          // Browser não suporta geolocalização
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+        
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(
+          browserHasGeolocation
+            ? "Error: The Geolocation service failed."
+            : "Error: Your browser doesn't support geolocation."
+        );
+        infoWindow.open(map);
+      }
+
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!-- VERIFICAR: https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse -->
+
+    <nav class="navbar fixed-top navbar-dark bg-danger">
+        <div class="col-md-8 offset-md-2 d-flex justify-content-around">
+            <div class="col p-1">
+                <a class="navbar-brand">Traçar rota</a>
+            </div>
+            <div class="col p-1">
+                <input class="form-control" id="origem" name="origem" type="text" placeholder="Origem" aria-label="Origem">
+            </div>
+            <div class="col p-1">
+                <input class="form-control" id="destino" name="destino" type="text" placeholder="Destino" aria-label="Destino">
+            </div>
+        </div>
+    </nav>
+    <div id="map" style="height: 100%;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByJwRnTBJtvJitQPHEc-XxQXH01UzPl8A&callback=initMap&v=weekly"
+      async></script>
+    <script>      
+      let map, infoWindow, pos;
+
+      function initMap() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              };
+              
+              map.setCenter(pos);
+              const marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+              });
+
+              //Retorna endereço a partir da localização no mapa
+              getEndereco(document.getElementById('origem'), pos);
+            },
+            () => {
+              handleLocationError(true, infoWindow, map.getCenter());
+            }
+          );
+          map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 0, lng: 0 },
+            zoom: 16,
+          });
+          infoWindow = new google.maps.InfoWindow();
+          
+          //Renderiza rota no mapa
+          const directionsService = new google.maps.DirectionsService();
+          const directionsRenderer = new google.maps.DirectionsRenderer();
+          directionsRenderer.setMap(map);
+          document.getElementById('destino').addEventListener('change', function(){       
+            calculaRotaExibe(directionsService, directionsRenderer);
+          });
+
+        } else {
+          // Browser não suporta geolocalização
+          handleLocationError(false, infoWindow, map.getCenter());
+        }        
+      }
+            
+      function getEndereco(input, posicao)
+      {
+        const geocoder = new google.maps.Geocoder();
+        geocoder
+        .geocode({ location: posicao })
+        .then((response) => {
+          if (response.results[0]) {
+            input.value = response.results[0].formatted_address;
+          } else {
+            window.alert("Sem resultados");
+          }
+        })
+        .catch((e) => window.alert("Falha no Geocoder: " + e));
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(
+          browserHasGeolocation
+            ? "Erro: Falha no serviço de geolocalização."
+            : "Error: Seu navegador não suporta geolocalização."
+        );
+        infoWindow.open(map);
+      }
+
+      function calculaRotaExibe(directionsService, directionsRenderer) {
+        directionsService
+          .route({
+            origin: {
+              query: document.getElementById('origem').value,
+            },
+            destination: {
+              query: document.getElementById('destino').value,
+            },
+            /* Opções de TravelMode: DRIVING, WALKING, BICYCLING, TRANSIT */
+            travelMode: google.maps.TravelMode.TRANSIT,
+          })
+          .then((response) => {
+            directionsRenderer.setDirections(response);
+          })
+          .catch((e) => window.alert('Um dos endereços não existe' + status));
+      }
+
+    </script>
+  </body>
+</html>
