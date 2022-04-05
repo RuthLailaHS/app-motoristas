@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<h2 class="text-center text-white mb-4"><i class="fa-solid fa-file-pen"></i> Cadastrar Veículo</h2>
+<h2 class="text-center text-white mb-4"><i class="fa-solid fa-file-pen" style="color: #FED057"></i> Cadastrar Veículo</h2>
 
 <head>
         <meta charset="UTF-8">
@@ -19,15 +19,15 @@
 <section>
             <form id="candidato" style="margin:0 40px 0 40px;" action="//viario.com.br/cadastro-online/processForm.php" method="post" enctype="multipart/form-data" accept-charset="utf-8" onsubmit="return checkSubmitState();">
                 <fieldset style="border: none;" class="text-white">
-                    <h2>FORMULÁRIO DE CADASTRAMENTO DE VEÍCULOS
-                        <span><small>Esse formulário e a documentação serão submetidos a análise para verificação e validação.</small></span></h2>
+                    <h2 style="color: #FED057">FORMULÁRIO DE CADASTRAMENTO DE VEÍCULOS
+                        <span style="color: white"><small>Esse formulário e a documentação serão submetidos a análise para verificação e validação.</small></span></h2>
                     <span>Dados do veículo:</span>
 
                     <div class="linha_form">
                         <div class="mod30">
                             <label for="tipo_de_veiculo" class="text-white">Tipo de veículo:</label><br>
                             <select class="w98h30" name="tipo_de_veiculo" id="tipo_de_veiculo" style="zoom:1.1" required="required" autofocus="">
-                                <option value="" disabled="disabled">
+                                <option value="0" disabled="disabled">
 									Selecione o tipo
                                 </option>
                                 <option value="1" selected="selected">

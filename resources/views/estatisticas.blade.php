@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<h2 class="text-center text-white mb-4"><i class="fas fa-chart-line"></i> Estatísticas</h2>
+<h2 class="text-center text-white mb-4"><i class="fas fa-chart-line" style="color: #FED057"></i> Estatísticas</h2>
                 <!-- //CARREGAMENTO DO PRIMEIRO GRÁFICO -->
 				<div id="chart_div" class="mb-3"></div>
 				<script type="text/javascript">

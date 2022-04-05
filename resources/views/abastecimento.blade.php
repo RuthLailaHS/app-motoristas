@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<h2 class="text-center text-white mb-4"><i class="fa-solid fa-gas-pump"></i></a> Abastecimento</h2>
+<h2 class="text-center text-white mb-4"><i class="fa-solid fa-gas-pump" style="color: #FED057"></i></a> Abastecimento</h2>
 				
                 <br>
                 <p class="m-0 text-white">Status Tanque do veículo</p>
@@ -43,7 +43,6 @@
                         }
                     })();
 
-                    
                 </script>
-
+                
 @endsection

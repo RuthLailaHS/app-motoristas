@@ -4,40 +4,44 @@
 
 @section('conteudo')
 
-<h2 class="text-center text-white mb-4"><i class="fa-solid fa-wrench"></i></a> Manutenção</h2>
+<h2 class="text-center text-white mb-4"><i class="fa-solid fa-wrench" style="color: #FED057"></i></a> Manutenção</h2>
 				
 <!DOCTYPE html>
 <html>
 <style>
-table, th, td {
-  border: 2px solid black;
-  background-color: #fff;
-}
-</style>
-<body>
+    table, th, td {
+      border: 2px solid black;
+      background-color: #fff;
+    }
+    </style>
+    <body>
 
-<br>
-<h3 class="text-white">A basic HTML table</h3>
-<br>
+    <br>
+    <h3 class="text-white">Histórico de manutenção</h3>
+    <br>
 
-<table style="width:100%">
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
+    <table style="width:100%">
+      <!-- Título -->
+      <tr>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Custo</th>
+      </tr>
+      <!-- Primeira linha tabela -->
+      <tr>
+        <td>Pneus</td>
+        <td>02/04/2022</td>
+        <td>R$1095,40</td>
+      </tr>
+      <!-- Segunda linha tabela -->
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
 
 </body>
 </html>
+
 @endsection
