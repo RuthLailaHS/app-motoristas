@@ -1,4 +1,4 @@
-@extends('template-mapa')
+@extends('template-mapa-rota')
 
 @section('titulo', 'Localizar Serviços')
 
@@ -6,21 +6,21 @@
 
 <h2 class="text-center mb-4" style="color: white"><i class="fa-solid fa-map-location-dot" style="color: #FED057"></i> Localizar Serviços</h2>
 
-                  <nav class="navbar navbar-dark">
-                    <div class="col-md-7 offset-md-2 d-flex justify-content-around">
-                        <div class="col p-1">
+                  <nav class="navbar row navbar-dark">
+                    
+                        <div class="col-md-2 p-1">
                             <a class="navbar-brand">Traçar rota</a>
                         </div>
-                        <div class="col p-1">
+                        <div class="col-md-5 p-1">
                             <input class="form-control" id="origem" name="origem" type="text" placeholder="Origem" aria-label="Origem">
                         </div>
-                        <div class="col p-1">
+                    
+                        <div class="col-md-5 p-1">
                             <input class="form-control" id="destino" name="destino" type="text" placeholder="Destino" aria-label="Destino">
                         </div>
-                    </div>
-                </nav>
+                  </nav>
 
-                <p>
+                  <p>
                     <a class="btn" style="background-color:#FED057; color:#fff" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                       Selecione o serviço
                     </a>
@@ -33,7 +33,7 @@
                             <li class="list-group-item">Lava-rápido</li>
                             <li class="list-group-item">Borracheiros</li>
                             <li class="list-group-item">Guinchos</li>
-                          </ul>
+                        </ul>
                     </div>
                   </div>
 

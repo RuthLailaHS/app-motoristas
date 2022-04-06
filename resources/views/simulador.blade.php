@@ -1,4 +1,4 @@
-@extends('template-mapa')
+@extends('template-mapa-rota')
 
 @section('titulo', 'Simulador')
 

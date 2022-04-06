@@ -48,7 +48,7 @@
 					
 				  </script>
 				
-				<p class="m-0 text-white">Status Tanque do veículo</p>
+				<p class="m-0 text-white">Status Tanque de combustível do veículo</p>
 				<div class="progress mb-3">
 					<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
 				</div>
