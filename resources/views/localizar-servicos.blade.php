@@ -9,7 +9,7 @@
                   <nav class="navbar row navbar-dark">
                     
                         <div class="col-md-2 p-1">
-                            <a class="navbar-brand">Traçar rota</a>
+                            <a class="navbar-brand" style="color: #FED057">Traçar Rota:</a>
                         </div>
                         <div class="col-md-5 p-1">
                             <input class="form-control" id="origem" name="origem" type="text" placeholder="Origem" aria-label="Origem">

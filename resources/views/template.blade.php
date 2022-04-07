@@ -14,7 +14,6 @@
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	
    
-
     <title>iDriver | @yield('titulo')</title>
   </head>
   <body class="mt-5 pt-5">
